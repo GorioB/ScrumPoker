@@ -19,6 +19,7 @@
     "colors": "^1.4.0",
     "compression": "^1.7.4",
     "connect": "^3.7.0",
+    "dotenv": "^8.2.0",
     "ejs": ">=2.5.5",
     "errorhandler": "^1.5.1",
     "express": "^4.17.1",
