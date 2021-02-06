@@ -22,6 +22,7 @@ var express = require('express')
 
 process.env.PORT = process.env.PORT || 80;
 process.env.NODE_ENV = process.env.NODE_ENV || 'development';
+const HOST_NAME = process.env.HOST_NAME || 'http://localhost'
 
 
 app.set('port', process.env.PORT);
@@ -79,10 +80,7 @@ app.post('/', function(req, res) {
   console.log(roomInfo);
 
   res.status(302);
-  res.set({
-    'Location': [req.protocol, "://", req.host, "/", roomInfo.Name].join('')
-  });
-  res.end();
+  res.redirect(`${HOST_NAME}/${roomInfo.Name}`);
 });
 
 if(app.get('env') === 'development'){
